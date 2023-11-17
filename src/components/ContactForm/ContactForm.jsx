@@ -2,12 +2,15 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormStyled, Label, Input, BtnAdd, Error } from './ContactForm.styled';
-import { addContact } from 'reduce/contacts/contactsSlice';
+import { addContact } from 'reduce/contacts/operation';
+// import { addContact } from 'reduce/contacts/operation';
 
 const SingupSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
   number: Yup.string()
-    .matches(/^\d{3}-\d{2}-\d{2}$/, 'Number format 000-00-00')
+    .matches(
+      /(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})/g
+    )
     .required('Required'),
 });
 export const ContactForm = () => {
