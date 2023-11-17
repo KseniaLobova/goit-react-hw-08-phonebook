@@ -7,7 +7,7 @@ export const Navigation = () => {
   return (
     <nav>
       <Link to="/">Home</Link>
-      {isLoggedIn && <Link to="/tasks">Tasks</Link>}
+      {isLoggedIn && <Link to="/contacts">Contacts</Link>}
     </nav>
   );
 };
