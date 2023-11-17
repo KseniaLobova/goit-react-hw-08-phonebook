@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormStyled, Label, Input, BtnAdd, Error } from './ContactForm.styled';
 import { addContact } from 'reduce/contacts/operation';
+import { selectContact } from 'reduce/contacts/selectors';
 // import { addContact } from 'reduce/contacts/operation';
 
 const SingupSchema = Yup.object().shape({
@@ -15,7 +16,7 @@ const SingupSchema = Yup.object().shape({
 });
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(selectContact);
   return (
     <Formik
       initialValues={{
