@@ -25,6 +25,7 @@ export const ContactForm = () => {
       }}
       validationSchema={SingupSchema}
       onSubmit={(values, actions) => {
+        console.log(values);
         const isContacts = contacts.some(contact =>
           contact.name.toLowerCase().includes(values.name.toLowerCase())
         );
