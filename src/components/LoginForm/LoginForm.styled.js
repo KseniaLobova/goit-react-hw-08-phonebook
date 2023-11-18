@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Form = styled.form`
 width:320px;
 display:flex;
@@ -9,15 +8,8 @@ gap:20px;`
 
 export const Label = styled.label`
  display: flex;
-    flex-direction: column;
-    font-size: 18px;
-    font-weight: 500;
-    gap: 5px;`
-
-export const Input = styled.input`
-border:1px solid;
-border-radius:4px;
-height:20px;`
+  flex-direction: column;
+  margin-bottom: 16px;`
 
 export const Btn = styled.button `
 margin-top: 5px;

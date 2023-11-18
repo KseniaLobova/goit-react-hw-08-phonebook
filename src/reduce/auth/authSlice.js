@@ -5,11 +5,10 @@ import { register, logOut, refreshUser, logIn } from "./operation";
 
 const initialState = {
     user: { name: null, email: null },
-    token:null,
+    token: null,
     isLoggedIn: false,
-    isRefreshing:false,
+    isRefreshing: false,
 }
-
 const authSlice = createSlice({
     name: "auth",
     initialState,
